@@ -1,17 +1,40 @@
 {
-    "buildNpmdoc":"restling",
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "buildNpmdoc": "restling",
+    "description": "api documentation for [restling (v0.9.1)](https://github.com/lucasfeliciano/restling) [![npm package](https://img.shields.io/npm/v/npmdoc-restling.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-restling) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-restling.svg)](https://travis-ci.org/npmdoc/node-npmdoc-restling)",
     "devDependencies": {
-        "restling": "*",
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "restling": "*",
         "utility2": "kaizhu256/node-utility2#alpha"
     },
-    "name":"npmdoc-restling",
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-restling",
+    "keywords": [
+        "documentation",
+        "restling"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_restling.js",
+    "name": "npmdoc-restling",
+    "nameAlias": "npmdoc_restling",
+    "nameOriginal": "npmdoc-restling",
+    "os": [
+        "darwin",
+        "linux"
+    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/npmdoc/node-npmdoc-restling"
     },
     "scripts": {
-        "build-ci": "utility2 shReadmeTest build_ci.sh"
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "(set -e; npm install \"kaizhu256/node-utility2#alpha\"; utility2 shDeployHeroku)",
+        "postinstall": "if [ -f npm_scripts.sh ]; then ./npm_scripts.sh postinstall; fi",
+        "start": "(set -e; export PORT=${PORT:-8080}; utility2 start test.js)",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
     },
     "version": "0.0.1"
 }
