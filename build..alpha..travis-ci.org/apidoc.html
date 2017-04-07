@@ -1,0 +1,768 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/lucasfeliciano/restling"
+
+    >restling (v0.9.1)</a>
+</h1>
+<h4>Restling is a lightweight Node.js module for building promise-based asynchronous HTTP requests.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.restling">module restling</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restling.allAsync">
+            function <span class="apidocSignatureSpan">restling.</span>allAsync
+            <span class="apidocSignatureSpan">(myRequests)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restling.del">
+            function <span class="apidocSignatureSpan">restling.</span>del
+            <span class="apidocSignatureSpan">(args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restling.get">
+            function <span class="apidocSignatureSpan">restling.</span>get
+            <span class="apidocSignatureSpan">(args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restling.head">
+            function <span class="apidocSignatureSpan">restling.</span>head
+            <span class="apidocSignatureSpan">(args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restling.json">
+            function <span class="apidocSignatureSpan">restling.</span>json
+            <span class="apidocSignatureSpan">(args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restling.patch">
+            function <span class="apidocSignatureSpan">restling.</span>patch
+            <span class="apidocSignatureSpan">(args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restling.post">
+            function <span class="apidocSignatureSpan">restling.</span>post
+            <span class="apidocSignatureSpan">(args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restling.postJson">
+            function <span class="apidocSignatureSpan">restling.</span>postJson
+            <span class="apidocSignatureSpan">(args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restling.put">
+            function <span class="apidocSignatureSpan">restling.</span>put
+            <span class="apidocSignatureSpan">(args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restling.putJson">
+            function <span class="apidocSignatureSpan">restling.</span>putJson
+            <span class="apidocSignatureSpan">(args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restling.request">
+            function <span class="apidocSignatureSpan">restling.</span>request
+            <span class="apidocSignatureSpan">(args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.restling.settleAsync">
+            function <span class="apidocSignatureSpan">restling.</span>settleAsync
+            <span class="apidocSignatureSpan">(myRequests)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.restling" id="apidoc.module.restling">module restling</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.restling.allAsync" id="apidoc.element.restling.allAsync">
+        function <span class="apidocSignatureSpan">restling.</span>allAsync
+        <span class="apidocSignatureSpan">(myRequests)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">allAsync = function (myRequests) {
+  if (_.isArray(myRequests)) {
+    return Promise.all(wrapToArray(myRequests));
+  }
+  else if (_.isObject(myRequests)) {
+    return Promise.props(wrapToObject(myRequests));
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restling.del" id="apidoc.element.restling.del">
+        function <span class="apidocSignatureSpan">restling.</span>del
+        <span class="apidocSignatureSpan">(args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">del = function (args){
+  var self = this;
+  var request = restler[verb].apply(self, arguments);
+
+  return new Promise(function(resolve, reject) {
+    request
+      .on(&#x27;success&#x27;, function(data, response) {
+        resolve({&#x27;data&#x27;: data, &#x27;response&#x27;: response});
+      })
+      .on(&#x27;fail&#x27;, function(data, response) {
+        var url = request.url.href,
+          method = verb.toUpperCase(),
+          errorMessage = &#x27;Cannot &#x27; + method + &#x27; &#x27; + url,
+          error = new Error(errorMessage);
+
+        error.statusCode = response.statusCode;
+        error.response = response;
+        error.data = data;
+
+        reject(error);
+      })
+      .on(&#x27;error&#x27;, function(err) {
+        reject(err);
+      })
+      .on(&#x27;abort&#x27;, function() {
+        reject(new Promise.CancellationError());
+      })
+      .on(&#x27;timeout&#x27;, function() {
+        reject(new Promise.TimeoutError());
+      });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restling.get" id="apidoc.element.restling.get">
+        function <span class="apidocSignatureSpan">restling.</span>get
+        <span class="apidocSignatureSpan">(args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (args){
+  var self = this;
+  var request = restler[verb].apply(self, arguments);
+
+  return new Promise(function(resolve, reject) {
+    request
+      .on(&#x27;success&#x27;, function(data, response) {
+        resolve({&#x27;data&#x27;: data, &#x27;response&#x27;: response});
+      })
+      .on(&#x27;fail&#x27;, function(data, response) {
+        var url = request.url.href,
+          method = verb.toUpperCase(),
+          errorMessage = &#x27;Cannot &#x27; + method + &#x27; &#x27; + url,
+          error = new Error(errorMessage);
+
+        error.statusCode = response.statusCode;
+        error.response = response;
+        error.data = data;
+
+        reject(error);
+      })
+      .on(&#x27;error&#x27;, function(err) {
+        reject(err);
+      })
+      .on(&#x27;abort&#x27;, function() {
+        reject(new Promise.CancellationError());
+      })
+      .on(&#x27;timeout&#x27;, function() {
+        reject(new Promise.TimeoutError());
+      });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Basic Usage
+-----------
+
+```javascript
+var rest = require(&#x27;restling&#x27;);
+
+rest.<span class="apidocCodeKeywordSpan">get</span>(&#x27;http://google.com&#x27;).then(function(result){
+  console.log(result.data);
+}, function(error){
+  console.log(error.message);
+});
+```
+The result passed into the success callback is an object with two keys:
+`data` and `response`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restling.head" id="apidoc.element.restling.head">
+        function <span class="apidocSignatureSpan">restling.</span>head
+        <span class="apidocSignatureSpan">(args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">head = function (args){
+  var self = this;
+  var request = restler[verb].apply(self, arguments);
+
+  return new Promise(function(resolve, reject) {
+    request
+      .on(&#x27;success&#x27;, function(data, response) {
+        resolve({&#x27;data&#x27;: data, &#x27;response&#x27;: response});
+      })
+      .on(&#x27;fail&#x27;, function(data, response) {
+        var url = request.url.href,
+          method = verb.toUpperCase(),
+          errorMessage = &#x27;Cannot &#x27; + method + &#x27; &#x27; + url,
+          error = new Error(errorMessage);
+
+        error.statusCode = response.statusCode;
+        error.response = response;
+        error.data = data;
+
+        reject(error);
+      })
+      .on(&#x27;error&#x27;, function(err) {
+        reject(err);
+      })
+      .on(&#x27;abort&#x27;, function() {
+        reject(new Promise.CancellationError());
+      })
+      .on(&#x27;timeout&#x27;, function() {
+        reject(new Promise.TimeoutError());
+      });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restling.json" id="apidoc.element.restling.json">
+        function <span class="apidocSignatureSpan">restling.</span>json
+        <span class="apidocSignatureSpan">(args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">json = function (args){
+  var self = this;
+  var request = restler[verb].apply(self, arguments);
+
+  return new Promise(function(resolve, reject) {
+    request
+      .on(&#x27;success&#x27;, function(data, response) {
+        resolve({&#x27;data&#x27;: data, &#x27;response&#x27;: response});
+      })
+      .on(&#x27;fail&#x27;, function(data, response) {
+        var url = request.url.href,
+          method = verb.toUpperCase(),
+          errorMessage = &#x27;Cannot &#x27; + method + &#x27; &#x27; + url,
+          error = new Error(errorMessage);
+
+        error.statusCode = response.statusCode;
+        error.response = response;
+        error.data = data;
+
+        reject(error);
+      })
+      .on(&#x27;error&#x27;, function(err) {
+        reject(err);
+      })
+      .on(&#x27;abort&#x27;, function() {
+        reject(new Promise.CancellationError());
+      })
+      .on(&#x27;timeout&#x27;, function() {
+        reject(new Promise.TimeoutError());
+      });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restling.patch" id="apidoc.element.restling.patch">
+        function <span class="apidocSignatureSpan">restling.</span>patch
+        <span class="apidocSignatureSpan">(args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">patch = function (args){
+  var self = this;
+  var request = restler[verb].apply(self, arguments);
+
+  return new Promise(function(resolve, reject) {
+    request
+      .on(&#x27;success&#x27;, function(data, response) {
+        resolve({&#x27;data&#x27;: data, &#x27;response&#x27;: response});
+      })
+      .on(&#x27;fail&#x27;, function(data, response) {
+        var url = request.url.href,
+          method = verb.toUpperCase(),
+          errorMessage = &#x27;Cannot &#x27; + method + &#x27; &#x27; + url,
+          error = new Error(errorMessage);
+
+        error.statusCode = response.statusCode;
+        error.response = response;
+        error.data = data;
+
+        reject(error);
+      })
+      .on(&#x27;error&#x27;, function(err) {
+        reject(err);
+      })
+      .on(&#x27;abort&#x27;, function() {
+        reject(new Promise.CancellationError());
+      })
+      .on(&#x27;timeout&#x27;, function() {
+        reject(new Promise.TimeoutError());
+      });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restling.post" id="apidoc.element.restling.post">
+        function <span class="apidocSignatureSpan">restling.</span>post
+        <span class="apidocSignatureSpan">(args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">post = function (args){
+  var self = this;
+  var request = restler[verb].apply(self, arguments);
+
+  return new Promise(function(resolve, reject) {
+    request
+      .on(&#x27;success&#x27;, function(data, response) {
+        resolve({&#x27;data&#x27;: data, &#x27;response&#x27;: response});
+      })
+      .on(&#x27;fail&#x27;, function(data, response) {
+        var url = request.url.href,
+          method = verb.toUpperCase(),
+          errorMessage = &#x27;Cannot &#x27; + method + &#x27; &#x27; + url,
+          error = new Error(errorMessage);
+
+        error.statusCode = response.statusCode;
+        error.response = response;
+        error.data = data;
+
+        reject(error);
+      })
+      .on(&#x27;error&#x27;, function(err) {
+        reject(err);
+      })
+      .on(&#x27;abort&#x27;, function() {
+        reject(new Promise.CancellationError());
+      })
+      .on(&#x27;timeout&#x27;, function() {
+        reject(new Promise.TimeoutError());
+      });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// auto convert xml to object
+rest.get(&#x27;http://twaud.io/api/v1/users/danwrong.xml&#x27;)
+  .then(successCallback, errorCallback);
+
+rest.get(&#x27;http://someslowdomain.com&#x27;,{timeout: 10000})
+  .then(successCallback, errorCallback);
+
+rest.<span class="apidocCodeKeywordSpan">post</span>(&#x27;http://user:pass@service.com/action&#x27;, {
+  data: { id: 334 },
+}).then(function(result) {
+  if (result.response.statusCode == 201) {
+    result.data;// you can get at the raw response like this...
+  }
+},
+errorCallback);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restling.postJson" id="apidoc.element.restling.postJson">
+        function <span class="apidocSignatureSpan">restling.</span>postJson
+        <span class="apidocSignatureSpan">(args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">postJson = function (args){
+  var self = this;
+  var request = restler[verb].apply(self, arguments);
+
+  return new Promise(function(resolve, reject) {
+    request
+      .on(&#x27;success&#x27;, function(data, response) {
+        resolve({&#x27;data&#x27;: data, &#x27;response&#x27;: response});
+      })
+      .on(&#x27;fail&#x27;, function(data, response) {
+        var url = request.url.href,
+          method = verb.toUpperCase(),
+          errorMessage = &#x27;Cannot &#x27; + method + &#x27; &#x27; + url,
+          error = new Error(errorMessage);
+
+        error.statusCode = response.statusCode;
+        error.response = response;
+        error.data = data;
+
+        reject(error);
+      })
+      .on(&#x27;error&#x27;, function(err) {
+        reject(err);
+      })
+      .on(&#x27;abort&#x27;, function() {
+        reject(new Promise.CancellationError());
+      })
+      .on(&#x27;timeout&#x27;, function() {
+        reject(new Promise.TimeoutError());
+      });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    &#x27;sound[message]&#x27;: &#x27;hello from restling!&#x27;,
+    &#x27;sound[file]&#x27;: rest.file(&#x27;doug-e-fresh_the-show.mp3&#x27;, null, 321567, null, &#x27;audio/mpeg&#x27;)
+  }
+}).then(successCallback, errorCallback);
+
+// post JSON
+var jsonData = { id: 334 };
+rest.<span class="apidocCodeKeywordSpan">postJson</span>(&#x27;http://example.com/action&#x27;, jsonData).then(successCallback,
+errorCallback);
+
+// put JSON
+var jsonData = { id: 334 };
+rest.putJson(&#x27;http://example.com/action&#x27;, jsonData).then(successCallback, errorCallback);
+```
+
+TODO
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restling.put" id="apidoc.element.restling.put">
+        function <span class="apidocSignatureSpan">restling.</span>put
+        <span class="apidocSignatureSpan">(args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">put = function (args){
+  var self = this;
+  var request = restler[verb].apply(self, arguments);
+
+  return new Promise(function(resolve, reject) {
+    request
+      .on(&#x27;success&#x27;, function(data, response) {
+        resolve({&#x27;data&#x27;: data, &#x27;response&#x27;: response});
+      })
+      .on(&#x27;fail&#x27;, function(data, response) {
+        var url = request.url.href,
+          method = verb.toUpperCase(),
+          errorMessage = &#x27;Cannot &#x27; + method + &#x27; &#x27; + url,
+          error = new Error(errorMessage);
+
+        error.statusCode = response.statusCode;
+        error.response = response;
+        error.data = data;
+
+        reject(error);
+      })
+      .on(&#x27;error&#x27;, function(err) {
+        reject(err);
+      })
+      .on(&#x27;abort&#x27;, function() {
+        reject(new Promise.CancellationError());
+      })
+      .on(&#x27;timeout&#x27;, function() {
+        reject(new Promise.TimeoutError());
+      });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restling.putJson" id="apidoc.element.restling.putJson">
+        function <span class="apidocSignatureSpan">restling.</span>putJson
+        <span class="apidocSignatureSpan">(args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">putJson = function (args){
+  var self = this;
+  var request = restler[verb].apply(self, arguments);
+
+  return new Promise(function(resolve, reject) {
+    request
+      .on(&#x27;success&#x27;, function(data, response) {
+        resolve({&#x27;data&#x27;: data, &#x27;response&#x27;: response});
+      })
+      .on(&#x27;fail&#x27;, function(data, response) {
+        var url = request.url.href,
+          method = verb.toUpperCase(),
+          errorMessage = &#x27;Cannot &#x27; + method + &#x27; &#x27; + url,
+          error = new Error(errorMessage);
+
+        error.statusCode = response.statusCode;
+        error.response = response;
+        error.data = data;
+
+        reject(error);
+      })
+      .on(&#x27;error&#x27;, function(err) {
+        reject(err);
+      })
+      .on(&#x27;abort&#x27;, function() {
+        reject(new Promise.CancellationError());
+      })
+      .on(&#x27;timeout&#x27;, function() {
+        reject(new Promise.TimeoutError());
+      });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// post JSON
+var jsonData = { id: 334 };
+rest.postJson(&#x27;http://example.com/action&#x27;, jsonData).then(successCallback, errorCallback);
+
+// put JSON
+var jsonData = { id: 334 };
+rest.<span class="apidocCodeKeywordSpan">putJson</span>(&#x27;http://example.com/action&#x27;, jsonData).then(successCallback, errorCallback
+);
+```
+
+TODO
+----
+
+* What do you need? Let me know or fork.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restling.request" id="apidoc.element.restling.request">
+        function <span class="apidocSignatureSpan">restling.</span>request
+        <span class="apidocSignatureSpan">(args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">request = function (args){
+  var self = this;
+  var request = restler[verb].apply(self, arguments);
+
+  return new Promise(function(resolve, reject) {
+    request
+      .on(&#x27;success&#x27;, function(data, response) {
+        resolve({&#x27;data&#x27;: data, &#x27;response&#x27;: response});
+      })
+      .on(&#x27;fail&#x27;, function(data, response) {
+        var url = request.url.href,
+          method = verb.toUpperCase(),
+          errorMessage = &#x27;Cannot &#x27; + method + &#x27; &#x27; + url,
+          error = new Error(errorMessage);
+
+        error.statusCode = response.statusCode;
+        error.response = response;
+        error.data = data;
+
+        reject(error);
+      })
+      .on(&#x27;error&#x27;, function(err) {
+        reject(err);
+      })
+      .on(&#x27;abort&#x27;, function() {
+        reject(new Promise.CancellationError());
+      })
+      .on(&#x27;timeout&#x27;, function() {
+        reject(new Promise.TimeoutError());
+      });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return _.mapValues(myRequests, function(myRequest){
+    return functionByMethod(myRequest);
+  });
+}
+
+function functionByMethod(myRequest) {
+  if (_.has(myRequest, &#x27;options&#x27;) &#x26;&#x26; _.has(myRequest.options, &#x27;method&#x27;)) {
+    return exports.<span class="apidocCodeKeywordSpan">request</span>(myRequest.url, myRequest.options);
+  }
+  return exports.get(myRequest.url, myRequest.options);
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.restling.settleAsync" id="apidoc.element.restling.settleAsync">
+        function <span class="apidocSignatureSpan">restling.</span>settleAsync
+        <span class="apidocSignatureSpan">(myRequests)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">settleAsync = function (myRequests) {
+
+  var wrapped = wrapToArray(myRequests);
+  if (_.isArray(myRequests)) {
+    return Promise.settle(wrapped).then(function(settledValues){
+      return getSettledValues(settledValues);
+    });
+  }
+  else if (_.isObject(myRequests)) {
+    var keys = _.keys(myRequests);
+
+    return Promise.settle(wrapped).then(function(settledValues) {
+      var resolved = _.zipObject(keys, getSettledValues(settledValues));
+      return  Promise.resolve(resolved);
+    });
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+```javascript
+var rest = require(&#x27;restling&#x27;);
+var obj  = {&#x27;google&#x27;:{&#x27;url&#x27;:&#x27;http://google.com&#x27;},
+            &#x27;api&#x27;:{&#x27;url&#x27;:&#x27;http://some/rest/api&#x27;}}
+
+rest.<span class="apidocCodeKeywordSpan">settleAsync</span>(obj).then(function(result){
+  // handle result here
+  // result is {google: responseFromGoogle, api: responseFromApi}
+},function(err){
+  // handle error here
+});
+```
+#### Passing an array
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
