@@ -273,23 +273,7 @@
       });
   });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-
-Basic Usage
------------
-
-```javascript
-var rest = require('restling');
-
-rest.<span class="apidocCodeKeywordSpan">get</span>('http://google.com').then(function(result){
-  console.log(result.data);
-}, function(error){
-  console.log(error.message);
-});
-```
-The result passed into the success callback is an object with two keys:
-`data` and `response`.
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -465,23 +449,7 @@ The result passed into the success callback is an object with two keys:
       });
   });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-// auto convert xml to object
-rest.get('http://twaud.io/api/v1/users/danwrong.xml')
-  .then(successCallback, errorCallback);
-
-rest.get('http://someslowdomain.com',{timeout: 10000})
-  .then(successCallback, errorCallback);
-
-rest.<span class="apidocCodeKeywordSpan">post</span>('http://user:pass@service.com/action', {
-  data: { id: 334 },
-}).then(function(result) {
-  if (result.response.statusCode == 201) {
-    result.data;// you can get at the raw response like this...
-  }
-},
-errorCallback);
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -525,24 +493,7 @@ errorCallback);
       });
   });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-    'sound[message]': 'hello from restling!',
-    'sound[file]': rest.file('doug-e-fresh_the-show.mp3', null, 321567, null, 'audio/mpeg')
-  }
-}).then(successCallback, errorCallback);
-
-// post JSON
-var jsonData = { id: 334 };
-rest.<span class="apidocCodeKeywordSpan">postJson</span>('http://example.com/action', jsonData).then(successCallback,
-errorCallback);
-
-// put JSON
-var jsonData = { id: 334 };
-rest.putJson('http://example.com/action', jsonData).then(successCallback, errorCallback);
-```
-
-TODO
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -630,23 +581,7 @@ TODO
       });
   });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-
-// post JSON
-var jsonData = { id: 334 };
-rest.postJson('http://example.com/action', jsonData).then(successCallback, errorCallback);
-
-// put JSON
-var jsonData = { id: 334 };
-rest.<span class="apidocCodeKeywordSpan">putJson</span>('http://example.com/action', jsonData).then(successCallback, errorCallback
-);
-```
-
-TODO
-----
-
-* What do you need? Let me know or fork.
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -690,19 +625,7 @@ TODO
       });
   });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-  return _.mapValues(myRequests, function(myRequest){
-    return functionByMethod(myRequest);
-  });
-}
-
-function functionByMethod(myRequest) {
-  if (_.has(myRequest, 'options') &amp;&amp; _.has(myRequest.options, 'method')) {
-    return exports.<span class="apidocCodeKeywordSpan">request</span>(myRequest.url, myRequest.options);
-  }
-  return exports.get(myRequest.url, myRequest.options);
-};
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -731,23 +654,7 @@ function functionByMethod(myRequest) {
     });
   }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-
-
-```javascript
-var rest = require('restling');
-var obj  = {'google':{'url':'http://google.com'},
-            'api':{'url':'http://some/rest/api'}}
-
-rest.<span class="apidocCodeKeywordSpan">settleAsync</span>(obj).then(function(result){
-  // handle result here
-  // result is {google: responseFromGoogle, api: responseFromApi}
-},function(err){
-  // handle error here
-});
-```
-#### Passing an array
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 

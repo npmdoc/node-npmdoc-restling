@@ -280,23 +280,7 @@
       });
   });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-
-Basic Usage
------------
-
-```javascript
-var rest = require(&#x27;restling&#x27;);
-
-rest.<span class="apidocCodeKeywordSpan">get</span>(&#x27;http://google.com&#x27;).then(function(result){
-  console.log(result.data);
-}, function(error){
-  console.log(error.message);
-});
-```
-The result passed into the success callback is an object with two keys:
-`data` and `response`.
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -472,23 +456,7 @@ The result passed into the success callback is an object with two keys:
       });
   });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-// auto convert xml to object
-rest.get(&#x27;http://twaud.io/api/v1/users/danwrong.xml&#x27;)
-  .then(successCallback, errorCallback);
-
-rest.get(&#x27;http://someslowdomain.com&#x27;,{timeout: 10000})
-  .then(successCallback, errorCallback);
-
-rest.<span class="apidocCodeKeywordSpan">post</span>(&#x27;http://user:pass@service.com/action&#x27;, {
-  data: { id: 334 },
-}).then(function(result) {
-  if (result.response.statusCode == 201) {
-    result.data;// you can get at the raw response like this...
-  }
-},
-errorCallback);
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -532,24 +500,7 @@ errorCallback);
       });
   });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-    &#x27;sound[message]&#x27;: &#x27;hello from restling!&#x27;,
-    &#x27;sound[file]&#x27;: rest.file(&#x27;doug-e-fresh_the-show.mp3&#x27;, null, 321567, null, &#x27;audio/mpeg&#x27;)
-  }
-}).then(successCallback, errorCallback);
-
-// post JSON
-var jsonData = { id: 334 };
-rest.<span class="apidocCodeKeywordSpan">postJson</span>(&#x27;http://example.com/action&#x27;, jsonData).then(successCallback,
-errorCallback);
-
-// put JSON
-var jsonData = { id: 334 };
-rest.putJson(&#x27;http://example.com/action&#x27;, jsonData).then(successCallback, errorCallback);
-```
-
-TODO
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -637,23 +588,7 @@ TODO
       });
   });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-
-// post JSON
-var jsonData = { id: 334 };
-rest.postJson(&#x27;http://example.com/action&#x27;, jsonData).then(successCallback, errorCallback);
-
-// put JSON
-var jsonData = { id: 334 };
-rest.<span class="apidocCodeKeywordSpan">putJson</span>(&#x27;http://example.com/action&#x27;, jsonData).then(successCallback, errorCallback
-);
-```
-
-TODO
-----
-
-* What do you need? Let me know or fork.
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -697,19 +632,7 @@ TODO
       });
   });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-  return _.mapValues(myRequests, function(myRequest){
-    return functionByMethod(myRequest);
-  });
-}
-
-function functionByMethod(myRequest) {
-  if (_.has(myRequest, &#x27;options&#x27;) &#x26;&#x26; _.has(myRequest.options, &#x27;method&#x27;)) {
-    return exports.<span class="apidocCodeKeywordSpan">request</span>(myRequest.url, myRequest.options);
-  }
-  return exports.get(myRequest.url, myRequest.options);
-};
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -738,23 +661,7 @@ function functionByMethod(myRequest) {
     });
   }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-
-
-```javascript
-var rest = require(&#x27;restling&#x27;);
-var obj  = {&#x27;google&#x27;:{&#x27;url&#x27;:&#x27;http://google.com&#x27;},
-            &#x27;api&#x27;:{&#x27;url&#x27;:&#x27;http://some/rest/api&#x27;}}
-
-rest.<span class="apidocCodeKeywordSpan">settleAsync</span>(obj).then(function(result){
-  // handle result here
-  // result is {google: responseFromGoogle, api: responseFromApi}
-},function(err){
-  // handle error here
-});
-```
-#### Passing an array
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
